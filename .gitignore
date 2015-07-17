@@ -1,0 +1,5 @@
+*.o
+run
+makefile
+main.cpp
+basic.h.gch
