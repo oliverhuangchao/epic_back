@@ -118,12 +118,16 @@ void print(T x){
 
 template<typename T>
 void print(const vector<vector<T>> result){
+    cout<<'['<<endl;
     for(auto each:result){
-        for(auto x:each){
-            cout<<x<<' ';
+        cout<<'[';
+        int i=0;
+        for(i;i<each.size()-1;i++){
+            cout<<each[i]<<',';
         }
-        cout<<endl;
+        cout<<each[i]<<']'<<endl;
     }
+    cout<<']'<<endl;
     return;
 }
 
