@@ -8,7 +8,7 @@ around it, then named thatelement be mountain point. Print all the mountain poin
 
 bool checkPeak(vector<vector<int>> &matrix,int i,int j){
     int value = matrix[i][j];
-    int x[] = {-1,-1,-1,0,0,0,1,1,1};
+    int x[] = {-1,-1,-1,0,0,0,1,1,1};//very smart solution
     int y[] = {-1,0,1,-1,0,1,-1,0,1};
     for(int k=0;k<8;k++){
         if(value < matrix[i+x[k]][j+y[k]])

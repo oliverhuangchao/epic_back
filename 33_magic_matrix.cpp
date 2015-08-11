@@ -16,8 +16,8 @@ void print_magic(int num){
 	int j = num/2;
 	while(count <= num*num){
 		matrix[i][j] = count++;
-		int tmp_i = (i-1+num)%num;
-		int tmp_j = (j+1)%num;
+		int tmp_i = (i-1+num)%num;// key part
+		int tmp_j = (j+1)%num;//key part
 		if(matrix[tmp_i][tmp_j] != 0){
 			tmp_i = (i+1)%num;
 			tmp_j = j;

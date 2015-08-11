@@ -21,16 +21,16 @@ void dfs(vector<vector<int>> &matrix,int i,int j,vector<int> &path, const string
     // go to rigth
     if(j != matrix[0].size()-1 && (matrix[i][j+1] - value) == 1){
 		string tmp_label=to_string(i)+'-'+to_string(j+1);
-		if(check.find(tmp_label) != check.end()){
+		if(check.find(tmp_label) != check.end()){//if already visited this position "i-j"
 			int add_start = path.size();
-			path.insert(path.end(),check[tmp_label].begin(),check[tmp_label].end());
+			path.insert(path.end(),check[tmp_label].begin(),check[tmp_label].end());//how to extend vector to a vector
 			if(max_len<path.size()){
 				max_len = path.size();
 				check[label] = path;
 			}
 			path.erase(path.begin()+add_start,path.end());
 		}
-     	else{
+     	else{// if this is a new position
 	        path.push_back(matrix[i][j+1]);
 	        dfs(matrix,i,j+1,path,label,max_len);
 	        path.pop_back();
@@ -93,7 +93,7 @@ void dfs(vector<vector<int>> &matrix,int i,int j,vector<int> &path, const string
 	        path.pop_back();
 	    }
     }
-    if(path.size()> max_len){
+    if(path.size()> max_len){// do not forget to update the longest value
 	    check[label] = path;
 	    max_len = path.size();
 	}
@@ -112,7 +112,7 @@ void findmax(){
     for(int i=0;i<matrix.size();i++){
         for(int j=0;j<matrix[0].size();j++){
         	string label=to_string(i)+'-'+to_string(j);
-            check.insert({label,vector<int>(1,matrix[i][j])});
+            check.insert({label,vector<int>(1,matrix[i][j])});// init each cell a '1'
             int max_len = 1;
             path.push_back(matrix[i][j]);
             dfs(matrix,i,j,path,label,max_len);

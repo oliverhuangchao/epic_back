@@ -14,7 +14,7 @@ int sum(const vector<int> &x){
 
 
 int average(vector<int> nums){
-    priority_queue<int,vector<int>,greater<int>> q;
+    priority_queue<int,vector<int>,greater<int>> q;//min-heap
     if(nums.size()<=3) return sum(nums);
     for(int i=0;i<3;i++){
         q.push(nums[i]);

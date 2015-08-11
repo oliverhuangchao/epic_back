@@ -15,6 +15,7 @@ should beallowed or not.
 
 bool iscorrect(string correct,string wrong){
 	char x[] = {'1','2','3','4','5','6','7','8','9'};
+	// firstly construct right input matrix
 	vector<vector<char>> matrix = getMatrix(x,3,3);
 	vector<char> nums = getVector(x,9);
 	unordered_map<char,unordered_set<char>> check;

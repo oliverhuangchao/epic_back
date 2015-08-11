@@ -5,7 +5,7 @@ will not be entered. You have givenexpected password and entered password. Check
 entered password is valid ornot. Ex: entered 164, expected 18684 (you need to take care as 
 when u enter 18684 and 164 only both will be taken as 164 input) */
 
-
+// put the wrong into a hashtable, then find the only one missing number, then check
 bool checkValid(string &whole,string &wrong){
     unordered_map<char,int> check;
     for(char x: wrong){
