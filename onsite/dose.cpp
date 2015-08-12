@@ -33,13 +33,10 @@ vector<int> getEach(string doesType){
     while (b>=0){
         if(doesType[b] == '-'){
             res.push_back(stoi(doesType.substr(b+1,end-b)));
-            //print(doesType.substr(b+1,end-b));
             end = b;
-            //b --;
         }
         b --;
     }
-    //print(end);
     res.push_back(stoi(doesType.substr(0,end+1)));
     reverse(res.begin(),res.end());
     return res;
@@ -61,7 +58,12 @@ public:
 
 
 class planFactory{
+    planFactory(){}
 public:
+    static planFactory& getInstance(){
+        static planFactory& fac;
+        return fac;
+    }
     Plan* createPlan(string uname,int pid){
         switch(pid){
             case 0:
@@ -83,7 +85,8 @@ int main(){
     //first_plan z("chaoh","1-2-3");
     //print(z.getDose(1));
     //print("finished");
-    planFactory fac;
+    //planFactory fac;
+    planFactory& fac = planFactory::getInstance();
     Plan* x = fac.createPlan("chaoh",1);
     print(x->getDose(10));
     //print(getEach("1-2-3-10-9-5"));
